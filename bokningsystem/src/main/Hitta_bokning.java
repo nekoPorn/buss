@@ -10,26 +10,28 @@ public class Hitta_bokning {
 		System.out.println("skriv in namn, efternamn eller personnummer för att hitta bokning");
 		String hitta =scanner.next();
 		
-		int platsNr =0; 
-		for (String plats : platser) {
-			platsNr++;
-			
-			if(plats==(null)) {
-				
-			}else {
-			if(plats.equalsIgnoreCase(hitta)) {
-				
-				hanteraBokning(platsNr);
-			}
-			
-			}
-		}
 		
-	}
+		int platsNr =1;
+		
+		for (int i = 0; i < platser.length; i++) {
+		    if (platser[i] != null && platser[i].toLowerCase().contains(hitta.toLowerCase())) {
+		        // Hittade en matchning
+		        System.out.println("Matchning hittad på index " + i);
+		        hanteraBokning(i); // Hantera bokningen för den matchande platsen
+		        break; // Avsluta loopen efter att ha hittat en matchning
+		    }
+		}
+
+		
+}
+		
+		
+		
+	
 
 	static void hanteraBokning(int platsNr) {
 		System.out.println("bokning hittades");
-		System.out.println("plats som bokades är "+ (platsNr-1));
+		System.out.println("plats som bokades är "+ (platsNr+1));
 		System.out.println("vad vill du göra?");
 		System.out.println("(1): ta bort bokning \n"
 						 + "(2)gå tillbaka ");
@@ -58,7 +60,7 @@ public class Hitta_bokning {
 static void taBortBokning(int platsNr){
 	System.out.println("tar bort bokning ");
 	
-	platser[(platsNr)-1]=null;
+	platser[(platsNr)]=null;
 	
 	
 	
