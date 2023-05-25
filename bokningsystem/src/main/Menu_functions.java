@@ -7,7 +7,7 @@ public class Menu_functions {
 	static Scanner scanner = new Scanner(System.in);
 	public static  String[] platser ={
 			"Elsa Andersson (0506122738)",
-		    "Oskar Bergström (0606122738)",
+		    null,
 		    "Johanna Carlsson (0706122738)",
 		    "Tobias Dahlberg (0806122738)",
 		    "Emilia Eriksson (0906122738)",
